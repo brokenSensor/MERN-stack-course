@@ -5,6 +5,7 @@ export default async function connectDB() {
 		await mongoose.connect(process.env.MONGOURI, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
+			useCreateIndex: true,
 		});
 
 		console.log('MongoDB Connected!');
