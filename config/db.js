@@ -11,7 +11,7 @@ export default async function connectDB() {
 
 		console.log('MongoDB Connected!');
 	} catch (error) {
-		console.error(error.message);
+		console.error(error);
 		process.exit(1);
 	}
 }
