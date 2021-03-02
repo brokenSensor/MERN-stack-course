@@ -2,6 +2,7 @@ import { response, Router } from 'express';
 import auth from '../../middleware/auth.js';
 import Profile from '../../models/Profile.js';
 import User from '../../models/User.js';
+import Post from '../../models/Post.js';
 import { body, check, validationResult } from 'express-validator';
 import request from 'request';
 const router = Router();
@@ -143,6 +144,9 @@ router.get('/user/:user_id', async (req, res) => {
 // @access  Privet
 router.delete('/', auth, async (req, res) => {
 	try {
+		// Remove user posts
+		await Post.deleteMany({ user: req.user.id });
+
 		// Remove profile
 		await Profile.findOneAndRemove({ user: req.user.id });
 
