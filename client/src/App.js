@@ -13,6 +13,7 @@ import AddEducation from './components/profile-form/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import PrivetRoute from './components/routing/PrivetRoute';
 //Redux
 import { Provider } from 'react-redux';
@@ -55,6 +56,7 @@ const App = () => {
 						/>
 						<PrivetRoute exact path='/add-education' component={AddEducation} />
 						<PrivetRoute exact path='/posts' component={Posts} />
+						<PrivetRoute exact path='/posts/:id' component={Post} />
 					</Switch>
 				</section>
 			</Router>
