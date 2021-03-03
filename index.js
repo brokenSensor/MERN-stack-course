@@ -6,6 +6,8 @@ import postsRoute from './routes/api/posts.js';
 import profileRoute from './routes/api/profile.js';
 import path from 'path';
 
+const __dirname = path.resolve();
+
 import dotenv from 'dotenv';
 dotenv.config();
 
